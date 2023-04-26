@@ -2,14 +2,8 @@ name: PR Labeler
 on:
   pull_request:
     types: [opened]
-  workflow_call:
-    inputs:
-      configuration-path:
-        required: true
-        type: string
-    secrets:
-      repo-token:
-        required: true
+  repository_dispatch:
+    types: [run-workflow]
 
 permissions:
   contents: read
