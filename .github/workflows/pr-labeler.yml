@@ -4,12 +4,12 @@ on:
     types: [opened]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   pr-labeler:
     permissions:
-      contents: write
+      contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
