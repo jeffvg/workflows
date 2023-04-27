@@ -1,7 +1,8 @@
 name: PR Labeler
 on:
   pull_request_target:
-    types: [opened]
+    branches:
+      - opened
 
 permissions:
   contents: read
