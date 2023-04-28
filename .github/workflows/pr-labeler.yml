@@ -15,7 +15,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: TimonVS/pr-labeler-action@v4
+      - uses: TimonVS/pr-labeler-action@v4.1.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           configuration-path: workflows/pr-labeler-properties.yml@dev
