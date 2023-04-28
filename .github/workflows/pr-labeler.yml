@@ -5,8 +5,7 @@ on:
     types: [opened]
   workflow_call:
 
-permissions:
-  pull-requests: read-all|write-all
+permissions: read-all|write-all
 
 jobs:
   pr-labeler:
