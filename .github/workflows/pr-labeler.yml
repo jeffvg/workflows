@@ -1,8 +1,8 @@
 name: PR Labeler
+
 on:
-  pull_request_target:
-    types:
-      - opened
+  pull_request:
+    types: [opened]
   workflow_call:
 
 permissions:
@@ -18,4 +18,4 @@ jobs:
       - uses: TimonVS/pr-labeler-action@v4
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          configuration-path: workflows/pr-labeler-properties.yml
+          configuration-path: workflows/pr-labeler-properties.yml@dev
