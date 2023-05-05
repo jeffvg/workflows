@@ -15,7 +15,7 @@ permissions:
 jobs:
   label-master:
     runs-on: ubuntu-latest
-    if: ${{ github.head_ref === 'ref/heads/dev' }}
+    if: ${{ github.ref == 'ref/heads/dev' }}
     steps:
       - uses: actions/github-script@v6
         with:
