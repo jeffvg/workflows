@@ -15,8 +15,8 @@ permissions:
 jobs:
   label-master:
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'ref/heads/main' }}
     steps:
-      if: ${{ github.ref == 'ref/heads/main' }}
       - uses: actions/github-script@v6
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
