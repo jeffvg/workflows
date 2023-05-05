@@ -28,7 +28,6 @@ jobs:
               labels: ['dev']
             })
 
-jobs:
   label-blui:
     runs-on: ubuntu-latest
     if: ${{ github.head_ref == 'ref/heads/dev' }}
