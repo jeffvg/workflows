@@ -1,0 +1,45 @@
+name: blui-labeler
+run-name: Labels
+on: 
+  pull_request_target:
+    types:
+      - opened
+  workflow_call:
+    secrets:
+      token:
+        required: true
+
+permissions:
+  pull-request: write
+
+jobs:
+  label-master:
+    runs-on: ubuntu-latest
+    if: ${{ github.head_ref == 'ref/heads/dev' }}
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['dev']
+            })
+
+jobs:
+  label-blui:
+    runs-on: ubuntu-latest
+    if: ${{ github.head_ref == 'ref/heads/dev' }}
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['blui']
+            })
