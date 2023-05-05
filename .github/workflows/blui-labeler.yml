@@ -15,7 +15,7 @@ permissions:
 jobs:
   label-master:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'ref/heads/main' }}
+    if: ${{ github.event.pull_request.base.ref == 'dev' }}
     steps:
       - uses: actions/github-script@v6
         with:
